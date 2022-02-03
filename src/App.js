@@ -16,8 +16,9 @@ class App extends React.Component{
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             {this.state.String}
+
            </p>
-          <button>Change Text</button>
+          <button onClick={()=> this.setState({String:"Yammy Is Here"})}>Change Text</button>
         </header>
       </div>
     );
