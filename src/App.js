@@ -3,14 +3,20 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends React.Component{
+  constructor(){
+    super();
+    this.state ={
+      String:"My Name is zain"
+    }
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-             Practice Makes A Man Perfect
-          </p>
+            {this.state.String}
+           </p>
           <button>Change Text</button>
         </header>
       </div>
