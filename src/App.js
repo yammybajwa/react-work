@@ -7,23 +7,16 @@ class App extends React.Component {
     super();
     this.state = {
       characher :[
-        {
-          name: "Yammy",
-          id:"asd4"
-        },
-        {
-          name: "Franky",
-          id:"agd5"
-
-        },
-        {
-          name: "John",
-          id:"adt8"
-
-        }
+       
       ]
 
     }
+  }
+
+  componentDidMount(){
+    fetch('http://jsonplaceholder.typicode.com/users')
+    .then(responce => responce.json())
+    .then(user => this.setState({characher : user}))
   }
   render() {
     return (
