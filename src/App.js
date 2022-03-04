@@ -21,11 +21,14 @@ class App extends React.Component {
       .then(user => this.setState({ characher: user }))
   }
   render() {
+    const {characher,searchField} =this.state;
+    const filteredCharacter = characher.filter(characher =>
+      characher.name.toLowerCase().includes(searchField.toLowerCase())
+      );
     return (
       <div className="App">
-        <input type='search' placeholder="Search Monster" onChange={e => this.setState({ searchField: e.target.value })} />
-        <CardList characher={this.state.characher} />
-
+        <input type='search' placeholder="Search Monster" onChange={e => this.setState({ searchField : e.target.value })} />
+        <CardList characher={filteredCharacter}/>
       </div>
     );
   }
